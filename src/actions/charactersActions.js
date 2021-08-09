@@ -21,3 +21,17 @@ export const traerCharacters = (page) => async(dispatch,getState) => {
         payload: characters_nuevos
     })
 }
+
+export const filterCharacters = (character) => async(dispatch) => {
+    let charactersFiltered = []
+    await Axios.get(`https://rickandmortyapi.com/api/character/?name=${character}`).then(res=>{
+        charactersFiltered = res.data
+    });
+    if(charactersFiltered.length){
+        alert("No resultados");
+    }
+    dispatch({
+        type: "filterCharacters",
+        payload: charactersFiltered
+    })
+}

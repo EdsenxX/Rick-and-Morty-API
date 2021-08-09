@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran&family=Staatliches&display=swap');
+
+.nav__fixes{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 150;
+}
+
+.nav{
+    background-color: #000000;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p{
+        margin: 0;
+    }
+    .nav__logo{
+        img{
+            width: 150px;
+            padding: 10px;
+        }
+    }
+    .nav__search{
+        position: relative;
+        width: 400px;
+        background-color: rgba($color: #262626, $alpha: 0.8);   
+        display: flex;
+        padding: 12px;     
+        height: 100%;
+        margin-right: 20px;
+        input{
+            width: 95%;
+            font-size: 1.2rem;
+            font-family: 'Catamaran', sans-serif;
+            border: none;
+            background: none;
+            outline: none;
+            color: white;
+            &:focus ~ .nav__search__results{
+                display: block;
+            }
+        }
+        .nav__search__results{
+            max-height: 500px;
+            overflow-y: auto;
+            display: none;
+            list-style: none;
+            background-color: white;
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            left: 0;
+            z-index: 100;
+        }
+    }
+    @media only screen and (max-width: 480px){
+        .nav__logo{
+            img{
+                width: 100px;
+                padding: 5px;
+            }
+        }
+    }
+}
