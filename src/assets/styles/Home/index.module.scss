@@ -1,7 +1,17 @@
 .content{
     display: grid; 
-    grid-template-columns: auto auto auto auto auto; 
+    grid-template-columns: auto auto auto auto auto;
+    background-color: #3e3e3e;
     img{
         width: 100%;
+    }
+    @media only screen and (max-width:1000px){
+        grid-template-columns: auto auto auto auto; 
+    }
+    @media only screen and (max-width:750px){
+        grid-template-columns: auto auto auto; 
+    }
+    @media only screen and (max-width:450px){
+        grid-template-columns: auto auto; 
     }
 }
